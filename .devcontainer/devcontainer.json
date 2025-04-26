@@ -28,9 +28,15 @@
     "ghcr.io/bartventer/arch-devcontainer-features/common-utils": {
       "configureZshAsDefaultShell": true,
       "installZsh": true,
-      "additionalPackages": "ffmpeg jq yq github-cli"
+      "additionalPackages": "ffmpeg jq yq",
     },
   },
+  "mounts": [
+    "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,readonly",
+    "source=${localEnv:HOME}/.config,target=/home/vscode/.config/,type=bind",
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly",
+    "source=${localEnv:HOME}/.config/zsh/zshrc/.zshrc,target=/home/vscode/.zshrc,type=bind",
+  ],
   // Comment out to connect as the root user.
   remoteUser: "ubuntu"
 }
