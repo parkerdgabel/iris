@@ -25,10 +25,11 @@
       dockerSocketBindMount: true,
       installDockerCompose: true
     },
-    "ghcr.io/bartventer/arch-devcontainer-features/common-utils": {
+    "ghcr.io/devcontainers/features/common-utils": {
       "configureZshAsDefaultShell": true,
+      "upgradePackages": true,
       "installZsh": true,
-      "additionalPackages": "ffmpeg jq yq",
+      "additionalPackages": "ffmpeg jq yq curl",
     },
   },
   "mounts": [
