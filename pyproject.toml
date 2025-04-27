@@ -1,6 +1,30 @@
 [project]
-name = "iris"
+name = "ffmpeg-agent"
 version = "0.1.0"
-description = "Add your description here"
-requires-python = ">=3.13"
-dependencies = []
+description = ""
+dependencies = [
+    "pydantic",
+    "pydantic-settings",
+    "pydantic-ai",
+]
+requires-python = "<=3.12.9,>=3.11"
+
+[dependency-groups]
+dev = [
+    "openhands-ai",
+    "pytest",
+    "pytest-cov",
+    "pytest-asyncio",
+    "pytest-mock",
+    "pytest-timeout",
+]
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+ffmpeg-agent = "ffmpeg_agent.__main__:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
